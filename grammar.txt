@@ -1,0 +1,24 @@
+(* CS414 Assignment03 *)
+(* Step 1: A Grammar for A Simple Shell *)
+
+(* commands *)
+<command> ::= <ls_command>
+	    | <cd_command>
+	    | <cat_command>
+	    | <print_command>
+	    | <exec_command>
+
+<ls_command> ::= "ls" [<filename>]
+<cd_command> ::= "cd" [<path>]
+<cat_command> ::= "cat" <filename>
+<print_command> ::= "print" <filename>
+<exec_command> ::= "exec" <filename>
+
+(* Type of Token *)
+	| LS
+	| CD
+	| CAT
+	| PRINT
+	| EXEC
+	| FILENAME
+	| PATH
