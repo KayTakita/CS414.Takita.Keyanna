@@ -1,0 +1,66 @@
+(* CS414 Assignment05 *)
+(* Question1:Extended Grammar for A Simple Shell *)
+
+(* commands *)
+<command> ::= <ls_command>
+	    | <cd_command>
+	    | <cat_command>
+	    | <print_command>
+	    | <exec_command>
+	    | <set_command>
+	    | <echo_command>
+
+<ls_command> ::= "ls" [<filename>]
+<cd_command> ::= "cd" [<path>]
+<cat_command> ::= "cat" <filename>
+<print_command> ::= "print" <filename>
+<exec_command> ::= "exec" <filename>
+<set_command> ::= "set" <variable> "=" <expression>
+<echo_command> ::= "echo" <variable>
+<variable> ::= "$" <letter> { <Letter> | <digit> }
+<expression> ::= <term> { ("+" | "-") <term> }
+<term> ::= <factor> { ("*" | "/") <factor> }
+<factor> ::= <variable> | <value> | "(" <expression> ")"
+value ::= <digit> { <digit> }
+
+(* Type of Token *)
+	| LS
+	| CD
+	| CAT
+	| PRINT
+	| EXEC
+	| SET
+	| ECHO
+	| EQUALS
+	| PLUS
+	| MINUS
+	| TIMES
+	| DIVIDE
+	| LPAREN
+	| RPAREN
+	| VARIABLE
+	| VALUE
+	| FILENAME
+	| PATH
+
+(* Grammar Variables *)
+	<command>
+	<ls_command>
+	<cd_command>
+	<cat_command>
+	<print_command>
+	<exec_command>
+	<set_command>
+	<echo_command>
+	<variable>
+	<expression>
+	<term>
+	<factor>
+	<value>
+	<filename>
+	<path>
+	<letter>
+	<digit>
+
+(* Start Symbol *)
+<command>
