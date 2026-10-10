@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# C++ build files
+cpp/build/
+cpp/store
+cpp/test
+
+# OCaml compiled files
+*.cmi
+*.cmo
+ocaml/store
+ocaml/test_store
